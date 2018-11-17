@@ -19,9 +19,38 @@ body{
     color: white;
 }
 
-.jumbotron{
-   background-color: var(--bc-black);
-    
+
+//Typography
+h2, h3, h4, h5, h6, p, input {
+    font-family:'Raleway', sans-serif;
+}
+
+
+h4, h5, h6{
+    color: var(--bc-yellow);
+}
+
+a{
+    color:var(--bc-green);
+}
+
+
+//Navbar
+.navbar-brand{
+    font-family:'JK Abode', sans-serif;
+}
+
+.navbar{
+    background-color: var(--bc-grey);
+}
+
+
+
+//Jumbotron
+.jumbotron {
+    background-color: var(--bc-black);
+    text-align: CENTER;
+
 }
 
 .jumbotron h1{
@@ -37,23 +66,9 @@ body{
     border-radius: 25px;
     
 }
-//Typography
-h2, h3, h4, h5, h6, p, input {
-    font-family:'Raleway', sans-serif;
-}
 
 
-
-h4, h5, h6{
-    color: var(--bc-yellow);
-}
-
-.jumbotron {
-    background-color: var(--bc-black);
-    text-align: CENTER;
-
-}
-
+//Inputs and Forms
 input {
     background-color: var(--bc-grey);
     border: none;

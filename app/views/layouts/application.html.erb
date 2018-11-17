@@ -10,6 +10,31 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-dark">
+      <a class="navbar-brand" href="<%=root_path%>">Byte Club</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class='collapse navbar-collapse' id="navbar-list">
+        <ul class='navbar-nav'>
+          <li class="nav-item"><a href="#">My Profile</a></li>
+          <li class="nav-item"><a href="#">Settings</a></li>
+          <li class="nav-item"><a href="#">Projects</a></li>
+          <li class="nav-item"><a href="#">Learn</a></li>
+        </ul>
+      </div>  
+        
+        
+    </nav>
     <%= yield %>
+    
+    <footer>
+      <div class="row">
+        <div>
+          <p><a href="<%=root_path%>">MHS Byte Club</a></p>
+          <p>Mundelein High School | 1350 W. Hawley St., Mundelein, IL, 60060</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
