@@ -1,21 +1,19 @@
 <body>
     <div class="jumbotron">
-        <div class="container jumbo-overlay">
-            <div>
-                <h1>Byte Club</h1>
-                <h5 id="tagline">Bring a helmet.</h5>
-            </div>
-            <form id='signin'>
-                <div>
-                    <input type="text" placeholder="email"/>
-                </div>
-                <div>
-                    <input type="password" placeholder="password"/>
-                </div>
-                <button class="btn btn-default">Sign-In</button>
-                <button class="btn btn-success">Sign Up</button>
-            </form>
+        <div>
+            <h1>Byte Club</h1>
+            <h5 id="tagline">Bring a helmet.</h5>
         </div>
+        <%=form_for :member, url: "/login", method: "POST" do |f|%>
+            <div>
+                <%=f.text_field "email", placeholder: "email"%>
+            </div>
+            <div>
+                <%=f.password_field "password", placeholder: "password"%>
+            </div>
+            <%=f.submit "Sign-in", class: "btn btn-default" %>
+            <a href="<%=new_member_path%>" class="btn btn-success">Sign Up</a>
+        <%end%>
     </div>
     <div class="container">
         <div class="row">
