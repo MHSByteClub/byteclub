@@ -1,0 +1,42 @@
+
+
+//JK Abode Font!
+@font-face { 
+    font-family: 'JK Abode';
+    src: asset_url('JKAbode-Demo.ttf') format('truetype');
+}
+
+:root {
+    --bc-teal: #6D9AA7;
+    --bc-black: #383838;
+    --bc-yellow: #fffa6d;
+    --bc-grey: #545454;
+    --bc-green: #6baa75;
+}
+
+
+h1{
+    font-family:'JK Abode';
+    font-size:48px;
+    color: var(--bc-teal);
+}
+
+.jumbotron {
+    background-color: var(--bc-black);
+    text-align: CENTER;
+
+}
+
+input {
+    background-color: var(--bc-grey);
+    border: none;
+    color: white;
+    padding:3px;
+    border-radius:3px;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: solid 2px var(--bc-yellow);
+    
+}
