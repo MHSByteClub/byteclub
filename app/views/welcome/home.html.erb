@@ -1,12 +1,52 @@
-<head>
-    
-</head>
 <body>
     <div class="jumbotron">
-        <h1>Byte Club</h1>
-        <form>
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-        </form>
+        <div class="container jumbo-overlay">
+            <div>
+                <h1>Byte Club</h1>
+                <h5 id="tagline">Bring a helmet.</h5>
+            </div>
+            <form id='signin'>
+                <div>
+                    <input type="text" placeholder="username"/>
+                </div>
+                <div>
+                    <input type="password" placeholder="password"/>
+                </div>
+                <button class="btn btn-default">Sign-In</button>
+                <button class="btn btn-success">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Next Meeting Date:</h5>
+                <h2>Mon 11/21/18</h2>
+                <p>3:30 PM in C104</p>
+                <a href="https://twitter.com/MHSByte" class="twitter-follow-button" data-show-count="false">Follow @MHSByte</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            	<p>Text @mhsbyte to 81010 to get signed up for the MHS Byte Club Remind!</p>
+            	<a href="https://github.com/MHSByteClub">Check us out on Github!</a>
+            </div>
+            <div class="col-md-8">
+                <h4 id="goals">What We Do:</h4>
+            	<ul>
+            		<li>Give people a safe place to ask questions and learn about code and computing.</li>
+            		<li>Build large-scale projects in teams</li>
+            		<li>Spread awareness about the benfits of learning to code throughout MHS.</li>
+            		<li>Support other MHS extra-curriculars with the use of technology and coding</li>
+            		<li>Display exemplary digital citizenship and advocate for digital safety.</li>
+            	</ul>
+            	
+            	<h4 id="donts">What We DON'T Do:</h4>
+            	<p></p>
+            	<ul>
+            		<li>Pwn Newbs (We won't ever make you feel bad for asking questions and wanting to learn! It's the only way to get better.)</li>
+            		<li>Hack others' systems, accounts, or resources without their expressed written consent.</li>
+            		<li>Give out assignments. This isn't a class. However, you'll be expected to progress and build something that interestes you!</li>
+            		<li>Get distracted by other computer-y stuff. <i>I'm looking at you Pokemon crowd.</i></li>
+            	</ul>
+            	<img src="<%=asset_url('byteclubfull.jpg')%>" style="width:100%"/>
+            </div>
+        </div>
     </div>
 </body>

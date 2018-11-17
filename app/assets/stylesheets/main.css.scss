@@ -9,16 +9,43 @@
 :root {
     --bc-teal: #6D9AA7;
     --bc-black: #383838;
-    --bc-yellow: #fffa6d;
+    --bc-yellow: #ffff6d;
     --bc-grey: #545454;
     --bc-green: #6baa75;
 }
 
+body{
+    background-color:var(--bc-grey);
+    color: white;
+}
 
-h1{
+.jumbotron{
+   background-color: var(--bc-black);
+    
+}
+
+.jumbotron h1{
     font-family:'JK Abode';
-    font-size:48px;
+    font-size:5em;
     color: var(--bc-teal);
+    margin-bottom:-10px;
+}
+
+.jumbo-overlay{
+    background-color: rgba(var(--bc-black), 0.6);
+    padding:20px;
+    border-radius: 25px;
+    
+}
+//Typography
+h2, h3, h4, h5, h6, p, input {
+    font-family:'Raleway', sans-serif;
+}
+
+
+
+h4, h5, h6{
+    color: var(--bc-yellow);
 }
 
 .jumbotron {
@@ -31,12 +58,12 @@ input {
     background-color: var(--bc-grey);
     border: none;
     color: white;
-    padding:3px;
+    padding:5px;
     border-radius:3px;
+    margin-bottom: 5px;
 }
 
 input:focus {
     outline: none;
     border-bottom: solid 2px var(--bc-yellow);
-    
 }
