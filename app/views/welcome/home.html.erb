@@ -11,8 +11,10 @@
             <div>
                 <%=f.password_field "password", placeholder: "password"%>
             </div>
-            <%=f.submit "Sign-in", class: "btn btn-default" %>
-            <a href="<%=new_member_path%>" class="btn btn-success">Sign Up</a>
+            <div>
+               <%=f.submit "Sign-in", class: "btn btn-teal" %>
+                <a href="<%=new_member_path%>" class="btn btn-green">Sign Up</a>
+            </div>
         <%end%>
     </div>
     <div class="container">

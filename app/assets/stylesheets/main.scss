@@ -7,7 +7,7 @@
 }
 
 :root {
-    --bc-teal: #6D9AA7;
+    --bc-teal: #7fc5db;
     --bc-black: #383838;
     --bc-yellow: #ffff6d;
     --bc-grey: #545454;
@@ -81,4 +81,24 @@ input {
 input:focus {
     outline: none;
     border-bottom: solid 2px var(--bc-yellow);
+}
+
+.btn {
+    font-family: "Raleway", sans-serif;
+    margin:0px;
+}
+
+//Button colors
+.btn-green{
+    background-color: var(--bc-green);
+    color: white;
+}
+
+.btn-yellow{
+    background-color: var(--bc-yellow);
+    color: var(--bc-black);
+}
+
+.btn-teal{
+    background-color: var(--bc-teal);
 }
