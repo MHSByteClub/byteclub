@@ -19,6 +19,12 @@ body{
     color: white;
 }
 
+.container {
+    background-color: var(--bc-black);
+    padding: 10px;
+}
+
+
 
 //Typography
 h2, h3, h4, h5, h6, p, input {
@@ -34,6 +40,11 @@ a{
     color:var(--bc-green);
 }
 
+a:hover{
+    color:var(--bc-yellow);
+    text-decoration:none;
+}
+
 
 //Navbar
 .navbar-brand{
@@ -43,6 +54,14 @@ a{
 
 .navbar{
     background-color: var(--bc-teal);
+}
+
+.navbar a{
+    color:white;
+}
+
+.navbar a:hover{
+    color:var(--bc-yellow);
 }
 
 
@@ -76,7 +95,7 @@ input {
     color: white;
     padding:5px;
     border-radius:3px;
-    margin-bottom: 5px;
+    margin: 5px 5px;
 }
 
 input:focus {
@@ -101,5 +120,11 @@ input:focus {
 }
 
 .btn-teal{
+    background-color: var(--bc-teal);
+}
+
+
+
+footer {
     background-color: var(--bc-teal);
 }
