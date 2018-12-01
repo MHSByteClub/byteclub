@@ -1,0 +1,18 @@
+<body>
+    <div class="container">
+        <h3>Update Member Account</h3>
+        <%=form_for @member, url: member_path(@member) do |f|%>
+            <div class="form-row">
+                <%=f.hidden_field :_method, value: "PATCH" %>
+                <%=f.text_field :username, placeholder: "username"%>
+                <%=f.text_field :grad_year, placeholder: "graduation year"%>
+            </div>
+            <div class="form-row">
+                <%=f.text_field :github_username, placeholder: "github username"%>
+                <%=f.number_field :grad_year, placeholder: 'graduation year'%>
+            </div>
+            <%=f.submit "Update Member", class: 'btn btn-green'%>
+            <a href="<%=member_path(@member)%>" class="btn btn-danger">Cancel</a>
+        <%end%>
+    </div>
+</body>

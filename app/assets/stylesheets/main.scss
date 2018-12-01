@@ -127,4 +127,7 @@ input:focus {
 
 footer {
     background-color: var(--bc-teal);
+    position: fixed;
+    bottom:0;
+    width:100%;
 }
