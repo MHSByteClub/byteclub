@@ -8,5 +8,14 @@ class ApplicationController < ActionController::Base
    def logged_in?
        current_member!=nil
    end
+   
+   def admin?
+      if (logged_in? && current_member.role=="admin")
+         return true
+      else
+         redirect_to root_path
+      end
+   end
+   
        
 end

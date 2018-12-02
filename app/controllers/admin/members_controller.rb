@@ -1,4 +1,5 @@
 class Admin::MembersController < ApplicationController
+    before_action :admin?
     
     def new
         @member=Member.new
