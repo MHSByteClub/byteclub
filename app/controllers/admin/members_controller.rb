@@ -1,6 +1,6 @@
-class Admin::MembersController < ApplicationController
+class Admin::MembersController < AdminController
     before_action :admin?
-    
+
     def new
         @member=Member.new
     end

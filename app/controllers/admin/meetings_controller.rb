@@ -1,6 +1,6 @@
-class Admin::MeetingsController < ApplicationController
+class Admin::MeetingsController < AdminController
     before_action :admin?
-    
+
     def new
         @meeting=Meeting.new
     end

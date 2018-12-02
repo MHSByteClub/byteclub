@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MHS Byte Club</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="<%=root_path%>">Byte Club Admin</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class='collapse navbar-collapse' id="navbar-list">
+        <ul class='navbar-nav mr-auto'>
+          <li class="nav-link"><a href="<%=admin_members_path%>">Members</a></li>
+          <li class="nav-link"><a href="<%=admin_meetings_path%>">Meetings</a></li>
+          <li class="nav-link"><a href="#">Projects</a></li>
+          <li class="nav-link"><a href="#">Learn</a></li>
+        </ul>
+      </div>  
+        
+        
+    </nav>
+      <div>
+        <%= yield %>
+      </div>
+    
+    <footer>
+      <div class="row">
+        <div class="col">
+          <p><a href="<%=root_path%>">MHS Byte Club</a></p>
+          <p>Mundelein High School | 1350 W. Hawley St., Mundelein, IL, 60060</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
