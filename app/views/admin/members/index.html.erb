@@ -1,0 +1,14 @@
+<h2>Byte Club Members</h2>
+<table class="table">
+    <% @members.each do |mem|%>
+    <tr>
+        <td><%=mem.username%></td>
+        <td><%=mem.email%></td>
+        <td><%=mem.grad_year%></td>
+        <td><%=mem.role%></td>
+        <td><a class="btn btn-warning" href="<%=edit_admin_member_path(mem)%>">Edit</a></td>
+    </tr>
+<%end%>
+
+    
+</table>
