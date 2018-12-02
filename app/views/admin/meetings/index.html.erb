@@ -1,0 +1,14 @@
+<h2>Meeting History</h2>
+<table class="table">
+    <% @meetings.each do |mtg|%>
+    <tr>
+        <td><%=mtg.date%></td>
+        <td><%=mtg.start_time%></td>
+        <td><%=mtg.end_time%></td>
+        <td><%=mtg.content%></td>
+    </tr>
+<%end%>
+
+    
+</table>
+
