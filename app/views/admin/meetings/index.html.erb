@@ -1,11 +1,21 @@
 <h2>Meeting History</h2>
 <table class="table">
+    <tr>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Agenda</th>
+        <th>Active?</th>
+        <th></th>
+    </tr>
     <% @meetings.each do |mtg|%>
     <tr>
         <td><%=mtg.date%></td>
         <td><%=mtg.start_time%></td>
         <td><%=mtg.end_time%></td>
         <td><%=mtg.content%></td>
+        <td><%=mtg.active%></td>
+        <td><a href="<%=edit_admin_meeting_path(mtg)%>" class="btn btn-warning">Edit</a></td>
     </tr>
 <%end%>
 
