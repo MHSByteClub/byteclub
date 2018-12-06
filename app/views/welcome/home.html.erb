@@ -25,7 +25,7 @@
                 <% else %>
                     <h5>Next Meeting Date:</h5>
                 <%end%>
-                <h2><%=@next_meeting.date.to_formatted_s(:rfc822)%></h2>
+                <h2><%=@next_meeting.date.strftime("%a %b %d")%></h2>
                 
                 <p>3:30 PM in C104</p>
                 <a href="https://twitter.com/MHSByte" class="twitter-follow-button" data-show-count="false">Follow @MHSByte</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
