@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-
     def home
         @next_meeting=Meeting.announce
         if(logged_in?)
