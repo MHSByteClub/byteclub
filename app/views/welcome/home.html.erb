@@ -1,9 +1,6 @@
 <body>
     <div class="jumbotron">
-        <video id="video-background" preload muted autoplay loop>
-            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
-      </video>
+        
         <div>
             <h1>Byte Club</h1>
             <h5 id="tagline">Bring a helmet.</h5>
@@ -18,7 +15,7 @@
             <div>
                <%=f.submit "Sign-in", class: "btn btn-teal" %>
                 <a href="<%=new_member_path%>" class="btn btn-green">Sign Up</a>
-                <a href="/auth/google_oauth2">Google?</a>
+                <a href="/auth/google_oauth2" class="btn btn-danger">Use the Googles</a>
             </div>
         <%end%>
     </div>
