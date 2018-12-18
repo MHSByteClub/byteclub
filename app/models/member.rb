@@ -1,6 +1,10 @@
 class Member < ApplicationRecord
     has_secure_password
     
+    has_many :member_meetings
+    has_many :meetings, through: :member_meetings
+    
+    
     
     def self.from_omniauth(auth)
         # Creates a new user only if it doesn't exist

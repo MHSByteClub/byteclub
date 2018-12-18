@@ -1,9 +1,19 @@
 class SessionsController < ApplicationController
     def create
+        
+        #Only logging in with Google is allowed right now.
         @member=Member.from_omniauth(request.env["omniauth.auth"])
         #if @member && @member.authenticate(session_params[:password])
         session[:member_id]=@member.id
+        
+        @meeting=Meeting.active_meetings.first
+        if !@meeting.nil?
+            MemberMeeting.create(member_id: @member.id, meeting_id: @meeting.id)
+        end
+        
+        
         redirect_to member_path(@member)
+            
         #else
         #    redirect_to root_path
         #end
