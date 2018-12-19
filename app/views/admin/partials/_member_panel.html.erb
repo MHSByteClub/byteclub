@@ -5,36 +5,24 @@
             <table class="table table-sm table-responsive-lg">
                 <thead>
                     <th scope="col">Name</th>
-                    <th scope="col">Email</th>
                     <th scope="col">Year</th>
                     <th scope="col">Status</th>
                     <th scope="col">Projects</th>
                     <th scope="col">Actions</th>
                 </thead>
+                <% @members.each do |m|%>
                 <tr>
-                    <td>Dummy</td>
-                    <td>dummy@data.com</td>
-                    <td>Freshman</td>
-                    <td>Active</td>
+                    <td><%=m.username%></td>
+                    <td><%=m.grad_year%></td>
+                    <td><%=m.status%></td>
                     <td>2</td>
                     <td>
-                        <button class="btn btn-sm btn-warning">Edit</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                        <button class="btn btn-sm btn-green">View</button>
+                        <a href="<%=edit_admin_member_path(m)%>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="<%=admin_member_path(m)%>"class="btn btn-sm btn-green">View</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Dummy</td>
-                    <td>dummy@data.com</td>
-                    <td>Freshman</td>
-                    <td>Active</td>
-                    <td>2</td>
-                    <td>
-                        <button class="btn btn-sm btn-warning">Edit</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                        <button class="btn btn-sm btn-green">View</button>
-                    </td>
-                </tr>
+                <%end%>
             </table>
             
         </div>

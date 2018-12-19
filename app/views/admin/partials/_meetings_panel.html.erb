@@ -3,14 +3,19 @@
         <h4 class="card-title">Meetings</h4>
         <div class="card-body">
             <ul class="list-group">
-                <li class="list-group-item">11/5/18 - Regular meeting - 18 attendees</li>
-                <li class="list-group-item">11/5/18 - Regular meeting - 18 attendees</li>
-                <li class="list-group-item">11/5/18 - Regular meeting - 18 attendees</li>
+                <% @meetings.each do |m|%>
+                    <li class="list-group-item"><%=m.date%> 
+                        <span class="badge badge-primary badge-pill"><%=m.members.count%></span>
+                    </li>
+                <%end%>
 
 
             </ul>
-            
+            <div>
+                <%= line_chart Meeting.meetings_attendance, ytitle: "Members", colors: ["#000000"]%>
+            </div>    
         </div>
+        
         
     </div>
     

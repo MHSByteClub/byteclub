@@ -30,7 +30,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Omni Auth Google Strategy
 gem 'omniauth-google-oauth2'
 
+# Gotta hide that .env file!
 gem 'dotenv-rails'
+
+# Let's makes some charts
+gem 'chartkick', '~> 3.0', '>= 3.0.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
