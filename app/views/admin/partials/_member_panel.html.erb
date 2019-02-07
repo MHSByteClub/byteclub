@@ -6,6 +6,7 @@
                 <thead>
                     <th scope="col">Name</th>
                     <th scope="col">Year</th>
+                    <th scope="col">Role</th>
                     <th scope="col">Status</th>
                     <th scope="col">Projects</th>
                     <th scope="col">Actions</th>
@@ -14,12 +15,12 @@
                 <tr>
                     <td><%=m.username%></td>
                     <td><%=m.grad_year%></td>
+                    <td><%=m.role%></td>
                     <td><%=m.status%></td>
                     <td>2</td>
                     <td>
                         <a href="<%=edit_admin_member_path(m)%>" class="btn btn-sm btn-warning">Edit</a>
                         <a href="" class="btn btn-sm btn-danger">Delete</a>
-                        <a href="<%=admin_member_path(m)%>"class="btn btn-sm btn-green">View</a>
                     </td>
                 </tr>
                 <%end%>

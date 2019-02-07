@@ -4,7 +4,18 @@ class Member < ApplicationRecord
     has_many :member_meetings
     has_many :meetings, through: :member_meetings
     
-    
+
+    def update_status
+        new_stat=""
+        if self.meetings.count>=(Meeting.past.count/2)
+            new_stat="active"
+        else
+            new_stat="potatoe"
+        end
+        
+        self.update(status: new_stat)
+    end
+        
     
     def self.from_omniauth(auth)
         # Creates a new user only if it doesn't exist

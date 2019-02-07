@@ -1,0 +1,14 @@
+<div class="container collapse" id="new_meeting_form">
+        <h3>Create a New Club Meeting</h3>
+        <%=form_for @meeting, url: admin_meetings_path do |f|%>
+            <div class="form-row">
+                <%=f.date_field :date, placeholder: "date"%>
+                <%=f.time_field :start_time, placeholder: "3:30 PM"%>
+            </div>
+            <div class="form-row">
+                <%=f.text_area(:content, placeholder: "meeting agenda", size: "24x6")%>
+            </div>
+            <%=f.submit "create meeting", class: 'btn btn-green'%>
+            <a href="<%=root_path%>" class="btn btn-danger">Cancel</a>
+        <%end%>
+    </div>

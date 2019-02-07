@@ -22,14 +22,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <% if @next_meeting.active%>
+                <% if @next_meeting.nil? %>
+                    <h5>No Upcoming Meetings</h5>
+                <% elsif @next_meeting.active%>
                     <h5>Meeting Now!</h5>
+                    <p>3:30 PM in C104</p>
                 <% else %>
                     <h5>Next Meeting Date:</h5>
+                    <h2><%=@next_meeting.date.strftime("%a %b %d")%></h2>
+                    <p>3:30 PM in C104</p>
+
                 <%end%>
-                <h2><%=@next_meeting.date.strftime("%a %b %d")%></h2>
-                
-                <p>3:30 PM in C104</p>
                 <a href="https://twitter.com/MHSByte" class="twitter-follow-button" data-show-count="false">Follow @MHSByte</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             	<p>Text @mhsbyte to 81010 to get signed up for the MHS Byte Club Remind!</p>
             	<a href="https://github.com/MHSByteClub">Check us out on Github!</a>

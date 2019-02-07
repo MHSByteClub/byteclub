@@ -4,15 +4,21 @@ class SessionsController < ApplicationController
         #Only logging in with Google is allowed right now.
         @member=Member.from_omniauth(request.env["omniauth.auth"])
         #if @member && @member.authenticate(session_params[:password])
+        
+        #logging user in via session
         session[:member_id]=@member.id
         
+        #get active meeting
         @meeting=Meeting.active_meetings.first
+        
+        #if there is an active meeting, record that this person 'attended' by signing in while active
         if !@meeting.nil?
             MemberMeeting.create(member_id: @member.id, meeting_id: @meeting.id)
         end
         
         
         redirect_to member_path(@member)
+        
             
         #else
         #    redirect_to root_path

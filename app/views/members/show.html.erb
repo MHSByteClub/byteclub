@@ -1,16 +1,18 @@
-<body>
     <div>
         
     </div>
     <div id='controls'>
         <div class="container">
+            
             <div class="member-image">
+                
                 <%=image_tag 'pacman.png'%>
             </div>
+            
             <h3>Welcome back, <%=@member.username%></h3>
             <a href="/logout" class="btn btn-danger">Logout</a> 
             <a href="<%=edit_member_path(@member)%>" class="btn btn-warning">Update Info</a>
+        
         </div>
         
     </div>
-</body>
