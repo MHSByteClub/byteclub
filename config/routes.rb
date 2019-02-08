@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  resources :members, only: [:new, :create, :show, :edit, :update]
+  resources :members do
+    resources :projects
+  end
   resources :meeting, only: [:show, :index]
+  resources :projects
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root "welcome#home"
     namespace :admin do
-      
       resources :members
       resources :meetings
-      
     end
+    
+    
     
     get "/dashboard" => "admin#home"
     post "/login" => "sessions#create"

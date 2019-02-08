@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_183625) do
+ActiveRecord::Schema.define(version: 2019_02_07_222942) do
 
   create_table "meetings", force: :cascade do |t|
     t.date "date"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2018_12_18_183625) do
     t.string "google_refresh_token"
     t.string "uid"
     t.string "provider"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.integer "member_id"
+    t.string "url"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

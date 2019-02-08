@@ -1,0 +1,9 @@
+<%= render "partials/errors", :object=>@project%>
+
+<%= form_for @project do |f|%>
+    <%=f.text_field :name, placeholder:"project name"%>
+    <%=f.text_field :url, placeholder:"link to project or github repo"%>
+    <%=f.text_field :status, placeholder:"project status"%>
+    <%=f.hidden_field :member_id, value: @member.id%>
+    <%=f.submit "Submit", class: "btn btn-green"%>
+<%end%>
