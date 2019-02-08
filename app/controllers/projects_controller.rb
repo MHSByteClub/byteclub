@@ -15,6 +15,10 @@ class ProjectsController < ApplicationController
         end
     end
     
+    def show
+        @project=Project.find(params[:id].to_i)
+    end
+    
     def edit
         @project=Project.find(params[:id].to_i)
         @member=current_member
@@ -25,6 +29,13 @@ class ProjectsController < ApplicationController
         @project.update(project_params)
         redirect_to member_path(current_member)
     end
+    
+    def destroy
+        @project=Project.find(params[:id].to_i)
+        @project.destroy
+        redirect_to member_path(current_member)
+    end
+    
     
     def project_params
         params.require(:project).permit(:name, :url, :status, :member_id)
