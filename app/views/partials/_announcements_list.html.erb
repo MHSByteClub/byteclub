@@ -1,0 +1,15 @@
+<div class="flex-row">
+    <h4>Announcements</h4>
+    <div class="list-group">
+        <% @announcements.each do |a|%>
+            <div class="list-group-item flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1"><%=link_to a.title, announcement_path(a)%></h5>
+                    <small><%=a.post_date%></small>
+                </div>
+                <p class="mb-1"><%=a.content%></p>
+                <small><%=a.member.username%> (<%=a.member.role%>)</small>
+            </div>
+        <%end%>
+    </div>
+</div>

@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   resources :members do
     resources :projects
   end
-  resources :meetings, only: [:show, :index]
-  resources :projects
-  
+
+  resources :meeting, only: [:show, :index]
+  resources :projects, only: [:show, :index]
+  resources :announcements, only: [:show, :index]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root "welcome#home"
     namespace :admin do
       resources :members
       resources :meetings
-      
+      resources :announcements
     end
     
     
