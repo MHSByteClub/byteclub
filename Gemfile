@@ -36,6 +36,9 @@ gem 'dotenv-rails'
 # Let's makes some charts
 gem 'chartkick', '~> 3.0', '>= 3.0.1'
 
+# Serializer gem for api-like calls in dashboard flow
+gem 'active_model_serializers'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
