@@ -1,19 +1,10 @@
-<div class="card" id="members-panel">
+<div class="card" id="meetings-panel">
     <div class="card-body">
         <h4 class="card-title">Meetings</h4>
         <div class="card-body">
-            <ul class="list-group">
+            <ul class="list-group" id="meetings-list">
                 
                 
-                <% @meetings.each do |m|%>
-                    <li class="list-group-item"><%=m.date%> 
-                        <span class="badge badge-primary badge-pill"><%=m.members.count%></span>
-                        <%=form_for m, url: admin_meeting_path(m) do |f|%>
-                            <%=f.hidden_field :active, value: true%>
-                            <%=f.submit "ACTIVATE"%>
-                        <%end%>
-                    </li>
-                <%end%>
 
 
             </ul>

@@ -15,11 +15,13 @@ class Admin::MeetingsController < AdminController
     
     def index
         @meetings=Meeting.all
+        render json: @meetings
     end
     
     
     def show
         @meeting=Meeting.find(params[:id].to_i)
+        render json: @meeting
     end
     
     def edit 

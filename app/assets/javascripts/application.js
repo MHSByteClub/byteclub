@@ -16,5 +16,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require_tree .
+//= require init
 //= require chartkick
+//= require admin_dashboard

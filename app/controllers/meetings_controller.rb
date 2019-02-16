@@ -1,8 +1,8 @@
-class Admin::MeetingsController < ApplicationController
-    skip_before_action :logged_in?
-    
+class MeetingsController < ApplicationController
+
     def index
         @meetings=Meeting.all
+        render json: @meetings
     end
     
     
