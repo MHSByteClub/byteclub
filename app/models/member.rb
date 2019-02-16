@@ -4,6 +4,7 @@ class Member < ApplicationRecord
     has_many :member_meetings
     has_many :meetings, through: :member_meetings
     has_many :projects
+    has_many :announcements
     
 
     def update_status
