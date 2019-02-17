@@ -1,4 +1,7 @@
 class Admin::MeetingsController < AdminController
+    protect_from_forgery with: :null_session
+
+    
     def new
         @meeting=Meeting.new
     end
@@ -31,7 +34,7 @@ class Admin::MeetingsController < AdminController
     def update
         @meeting=Meeting.find(params[:id].to_i)
         @meeting.update(meeting_params)
-        redirect_to admin_meetings_path
+        render json: Meeting.all
     end
     
     

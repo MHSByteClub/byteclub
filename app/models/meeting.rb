@@ -1,5 +1,5 @@
 class Meeting < ApplicationRecord
-    
+
     scope :next_meeting, -> { where("date > ?", Date.today ).order("date asc").first }
     scope :upcoming_meetings, -> {where("date > ?", Date.today).order("date asc") }
     scope :past, -> { where("date < ?", Date.today) }
@@ -8,8 +8,11 @@ class Meeting < ApplicationRecord
     has_many :member_meetings
     has_many :members, through: :member_meetings
     
+    def members_count
+        self.members.count
+    end
     
-    
+    #returns the next upcoming meeting
     def self.announce
         if self.active_meetings.length==0
             if self.upcoming_meetings.length>0
