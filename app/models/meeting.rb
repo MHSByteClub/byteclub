@@ -12,6 +12,14 @@ class Meeting < ApplicationRecord
         self.members.count
     end
     
+    def start
+        self.update(active: true, start_time: Time.now())
+    end
+    
+    def stop
+        self.update(active: false, end_time: Time.now())
+    end
+    
     #returns the next upcoming meeting
     def self.announce
         if self.active_meetings.length==0

@@ -8,8 +8,8 @@
 
 
             </ul>
-            <button class="btn btn-green" data-target="#new_meeting_form" data-toggle="collapse">New Meeting</button>
-
+            <button class="btn btn-green" data-target="#new_meeting_modal" data-toggle="modal">New Meeting</button>
+            <%=render 'admin/partials/new_meeting_form'%>
             <div>
                 <%= line_chart Meeting.meetings_attendance, ytitle: "Members", colors: ["#000000"]%>
             </div>    

@@ -10,10 +10,8 @@ class Admin::MeetingsController < AdminController
         @meeting=Meeting.new(meeting_params)
         if @meeting.valid?
             @meeting.save
-            redirect_to admin_meetings_path
-        else
-            render 'admin/meetings/new'
         end
+        render json: Meeting.all
     end
     
     def index
