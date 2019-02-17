@@ -1,21 +1,21 @@
 <div class="card" id="meetings-panel">
     <div class="card-body">
-        <h4 class="card-title">Meetings</h4>
+        <div class="card-heading">
+            <h4 class="card-title">Meetings</h4>
+            <div class="card-controls">
+                <button class="btn btn-teal" data-target="#new_meeting_modal" data-toggle="modal">New Meeting</button>
+            </div>
+        </div>
         <div class="card-body">
             <ul class="list-group" id="meetings-list">
-                
-                
-
-
             </ul>
-            <button class="btn btn-green" data-target="#new_meeting_modal" data-toggle="modal">New Meeting</button>
-            <%=render 'admin/partials/new_meeting_form'%>
+            
+            <!--chart of meeting attendence over time, just for fun for now-->
             <div>
                 <%= line_chart Meeting.meetings_attendance, ytitle: "Members", colors: ["#000000"]%>
             </div>    
         </div>
-        
-        
     </div>
-    
+    <!--Done in a modal-->
+    <%=render 'admin/partials/new_meeting_form'%>
 </div>

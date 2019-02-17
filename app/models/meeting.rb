@@ -13,11 +13,13 @@ class Meeting < ApplicationRecord
     end
     
     def start
-        self.update(active: true, start_time: Time.now())
+        puts "Starting meeting"
+        self.update(start_time: Time.now())
     end
     
     def stop
-        self.update(active: false, end_time: Time.now())
+        puts "stopping meeting"
+        self.update(end_time: Time.now())
     end
     
     #returns the next upcoming meeting

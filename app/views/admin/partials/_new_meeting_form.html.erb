@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%=form_for @meeting, url: admin_meetings_path, class: "new-meeting-form" do |f|%>
+        <%=form_for Meeting.new, url: admin_meetings_path, class: "new-meeting-form" do |f|%>
             <div class="form-row">
                 <%=f.date_field :date, placeholder: "date"%>
                 <%=f.time_field :start_time, placeholder: "3:30 PM"%>

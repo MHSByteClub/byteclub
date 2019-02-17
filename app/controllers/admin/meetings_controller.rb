@@ -30,6 +30,7 @@ class Admin::MeetingsController < AdminController
     def update
         @meeting=Meeting.find(params[:id].to_i)
         @meeting.update(meeting_params)
+        @meeting.active ? @meeting.start : @meeting.stop
         render json: Meeting.all
     end
     
