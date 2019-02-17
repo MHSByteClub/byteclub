@@ -15,8 +15,9 @@ $(function(){
             
         });
         
-        $('#new-meeting-form').submit(function(event){
+        $('.new_meeting').submit(function(event){
             event.preventDefault();
+            console.log('this the one');
             let data=$(this).serialize();
 
             let targetURL=window.location.href.replace('dashboard',`admin/meetings`);
@@ -24,11 +25,12 @@ $(function(){
             let updating=$.post(targetURL,data);
             
             updating.done(function(data){
+                $('#new_meeting_modal').modal('toggle');
                 buildMeetingsTable(data);
             });
             
             
-        })
+        });
     }
 });
 

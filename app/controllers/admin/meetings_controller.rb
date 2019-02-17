@@ -8,9 +8,7 @@ class Admin::MeetingsController < AdminController
     
     def create
         @meeting=Meeting.new(meeting_params)
-        if @meeting.valid?
-            @meeting.save
-        end
+        @meeting.save
         render json: Meeting.all
     end
     
