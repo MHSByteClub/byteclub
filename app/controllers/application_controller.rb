@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
    
    def admin?
       if (logged_in? && current_member.role=="admin")
-         return true
+         redirect_to dashboard_path
       else
          redirect_to root_path
       end
