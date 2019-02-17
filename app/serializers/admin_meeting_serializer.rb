@@ -1,4 +1,4 @@
-class AdminMeetingSerializer < ActiveModel::Serializer
+class AdminMeetingSerializer < ApplicationSerializer
     attributes :date, :active, :content, :start_time, :end_time
 
     

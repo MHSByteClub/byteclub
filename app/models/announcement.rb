@@ -2,7 +2,7 @@ class Announcement < ApplicationRecord
     belongs_to :member
     
     scope :active, -> { where("post_date <= ?", Date.today) }
-    scope :upcoming, -> {where("post_date >= ?", Date.today)}
+    scope :upcoming, -> { where("post_date >= ?", Date.today) }
     
     
     #CLASS METHODS
