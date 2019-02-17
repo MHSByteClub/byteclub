@@ -71,7 +71,12 @@ function buildActivateButton(mtg){
         btnClass="danger";
     }
     
-    const f=$(`<form class="toggle-active" data-id='${mtg.id}' method='POST'><input type="hidden" name="_method" value="PATCH"/><input type='hidden' name="meeting[active]" value="${ !mtg.active}"/><button class="btn btn-small btn-${btnClass}" type="submit">${btnText}</button>`);
+    const f=$(`
+        <form class="toggle-active" data-id='${mtg.id}' method='POST'>
+            <input type="hidden" name="_method" value="PATCH"/>
+            <input type='hidden' name="meeting[active]" value="${ !mtg.active}"/>
+            <button class="btn btn-small btn-${btnClass}" type="submit">${btnText}</button>
+        </form>`);
     return f;
 }
 
