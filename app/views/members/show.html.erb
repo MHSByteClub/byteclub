@@ -4,13 +4,18 @@
     <div id='controls'>
         <div class="container">
             
-            <div class="member-image">
-                
-                <%=image_tag 'pacman.png'%>
-            </div>
+                <div class="member-image">
+                    <%=image_tag 'pacman.png'%>
+                </div>
+                <div>
+                    <h3><%=@member.username%></h3>
+                    <small><%=@member.role%></small>
+                    <small><%=@member.level%></small>
+                </div>
             
-            <h3>Welcome back, <%=@member.username%></h3>
-            <a href="/logout" class="btn btn-danger">Logout</a> 
+            
+            
+            
             <a href="<%=edit_member_path(@member)%>" class="btn btn-warning">Update Info</a>
         
         </div>
