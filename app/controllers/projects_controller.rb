@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     end
     
     def edit
-        @project=Project.find(params[:id].to_i)
+        @project=Project.find(params[:project_id].to_i)
         @member=current_member
     end
     

@@ -17,6 +17,7 @@ class MembersController < ApplicationController
     
     def show
         @member=Member.find(params[:id].to_i)
+        @projects=@member.projects
     end
     
     def edit 
