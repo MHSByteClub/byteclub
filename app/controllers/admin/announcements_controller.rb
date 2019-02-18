@@ -1,15 +1,16 @@
 class Admin::AnnouncementsController < AdminController
     protect_from_forgery with: :null_session
-
+    layout "admin"
     
     def new
         @announcement=Announcement.new
+        @current=current_member
     end
     
     def create
         @announcement=Announcement.new(announcement_params)
-        @announcement.save
-        render json: Announcement.all
+        @announcement.update(member_id: current_member.id)
+        redirect_to dashboard_path
     end
     
     def index

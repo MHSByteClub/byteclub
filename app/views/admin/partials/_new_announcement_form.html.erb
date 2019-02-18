@@ -1,0 +1,21 @@
+<%=form_for @announcement, url: admin_announcements_path do |f| %>
+
+  <div class="form-group">
+    <%=f.label :title%>
+    <%=f.text_field :title, placeholder: "Announcement Title"%>
+  </div>
+  <div class="form-group">
+    <%=f.label :post_date%>
+    <%=f.date_field :post_date%>
+  </div>
+  <div class="form-group">
+    <%=f.label :content%>
+    <%=f.text_area :content, placeholder: "Announcement Content", size: "25x10", class: "form-control", maxlength: 200, escape: false%>
+  </div>
+    
+ 
+  
+  
+  <%=f.submit class: "btn btn-green"%>
+  <%=link_to "Cancel", dashboard_path, class: "btn btn-danger"%>
+<%end%>
