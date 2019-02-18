@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
     def home
         @next_meeting=Meeting.announce
-        @announcements=Announcement.recent_announcements
+        @announcements=Announcement.all
         if(logged_in?)
             if admin?
                 redirect_to dashboard_path
