@@ -5,19 +5,10 @@
             <h1>Byte Club</h1>
             <h5 id="tagline">Bring a helmet.</h5>
         </div>
-        <%=form_for :member, url: "/login", method: "POST" do |f|%>
             <div>
-                <%=f.text_field "email", placeholder: "email"%>
+                <a href="/auth/google_oauth2" class="btn btn-green">Sign In</a>
             </div>
-            <div>
-                <%=f.password_field "password", placeholder: "password"%>
-            </div>
-            <div>
-               <%=f.submit "Sign-in", class: "btn btn-teal" %>
-                <a href="<%=new_member_path%>" class="btn btn-green">Sign Up</a>
-                <a href="/auth/google_oauth2" class="btn btn-danger">Use the Googles</a>
-            </div>
-        <%end%>
+        
     </div>
     <div class="container">
         <div class="row">
