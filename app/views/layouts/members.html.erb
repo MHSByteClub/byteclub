@@ -24,6 +24,7 @@
           <li class="nav-link"><a href="#">Settings</a></li>
           <li class="nav-link"><a href="#">Projects</a></li>
           <li class="nav-link"><a href="#">Learn</a></li>
+          <li class="nav-link"><%=link_to "Logout", logout_path%></li>
         </ul>
       </div>  
         
@@ -33,13 +34,8 @@
         <%= yield %>
       </div>
     
-    <footer>
-      <div class="row">
-        <div class="col">
-          <p><a href="<%=root_path%>">MHS Byte Club</a></p>
-          <p>Mundelein High School | 1350 W. Hawley St., Mundelein, IL, 60060</p>
-        </div>
-      </div>
+    <footer class="footer navbar-fixed-bottom">
+          <p><a href="<%=root_path%>">MHS Byte Club</a> | Mundelein High School | 1350 W. Hawley St., Mundelein, IL, 60060</p>
     </footer>
   </body>
 </html>
