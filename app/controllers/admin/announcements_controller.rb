@@ -31,8 +31,7 @@ class Admin::AnnouncementsController < AdminController
     def update
         @announcement=Announcement.find(params[:id].to_i)
         @announcement.update(announcement_params)
-        @announcement.active ? @announcement.start : @announcement.stop
-        render json: Announcement.all
+        redirect_to dashboard_path
     end
     
     

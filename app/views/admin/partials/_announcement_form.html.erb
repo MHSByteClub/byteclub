@@ -1,5 +1,4 @@
-<%=form_for @announcement, url: admin_announcements_path do |f| %>
-
+<%=form_for @announcement url: admin_meetings_path do |f| %>
   <div class="form-group">
     <%=f.label :title%>
     <%=f.text_field :title, placeholder: "Announcement Title"%>

@@ -17,11 +17,12 @@ function renderAnnRow(ann){
     let annItem=$(`
         <div class="list-group-item flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><a href="/admin/announcements${ann.id}">${ann.title}</a></h5>
+                <h5 class="mb-1"><a href="/admin/announcements/${ann.id}">${ann.title}</a></h5>
                 <small>${ann.post_date}</small>
             </div>
             <p class="mb-1">${ann.content}</p>
             <small>${ann.member.username}, ${ann.member.role}</small>
+            <a href="${window.location.href.replace("dashboard","admin/announcements/")}${ann.id}/edit" class="btn btn-small btn-green">Edit</a>
         </div>
         `);
     return annItem;

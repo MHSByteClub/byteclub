@@ -1,6 +1,6 @@
 <div class="container">
-    <h3>Create New Announcement</h3>
-    <%=form_for @announcement, url: admin_announcements_path do |f| %>
+    <h3>Edit Announcement: <%=@announcement.title%></h3>
+    <%=form_for @announcement, url: admin_announcement_path(@announcement) do |f| %>
       <div class="form-group">
         <%=f.label :title%>
         <%=f.text_field :title, placeholder: "Announcement Title"%>
@@ -20,5 +20,4 @@
       <%=f.submit class: "btn btn-green"%>
       <%=link_to "Cancel", dashboard_path, class: "btn btn-danger"%>
     <%end%>
-    
 </div>
