@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+    layout "members"
+    
     def new
         @project=Project.new(member_id: params[:member_id])
         @member=Member.find(params[:member_id])
@@ -38,6 +40,6 @@ class ProjectsController < ApplicationController
     
     
     def project_params
-        params.require(:project).permit(:name, :url, :status, :member_id)
+        params.require(:project).permit(:name, :url, :status, :member_id, :description)
     end
 end

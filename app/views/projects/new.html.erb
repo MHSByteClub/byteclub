@@ -1,5 +1,7 @@
 <h1>Create New Project</h1>
-<%=@member.username%>
 
-<%=render "partials/project_form"%>
+<div class="container">
+    <%=render "partials/project_form", collection: @project, locals: {u: member_projects_path(@member)}%>
+
+</div>
     

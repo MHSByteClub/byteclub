@@ -17,6 +17,11 @@ class Member < ApplicationRecord
         
         self.update(status: new_stat)
     end
+    
+    def year_from_email
+        #updates the user's year as a function of their email, not yet implemented
+        grad_year=(self.email.split("@").first/10000).to_i
+    end
         
     
     def self.from_omniauth(auth)
@@ -26,9 +31,12 @@ class Member < ApplicationRecord
             member.uid = auth.uid
             member.email=auth.info.email
             member.username = auth.info.name
+            member.name=auth.info.name
             member.google_token= auth.credentials.token
             member.password=SecureRandom.hex
             member.save
         end
     end
+    
+    
 end

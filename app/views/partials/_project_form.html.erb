@@ -1,9 +1,26 @@
 <%= render "partials/errors", :object=>@project%>
 
-<%= form_for @project do |f|%>
-    <%=f.text_field :name, placeholder:"project name"%>
-    <%=f.text_field :url, placeholder:"link to project or github repo"%>
-    <%=f.text_field :status, placeholder:"project status"%>
-    <%=f.hidden_field :member_id, value: @member.id%>
-    <%=f.submit "Submit", class: "btn btn-green"%>
+<%= form_for @project, url: locals[:u] do |f|%>
+    
+    <div class="form-group">
+        <%=f.label :name %>
+        <%=f.text_field :name, placeholder:"project name"%>
+    </div>
+    <div class="form-group">
+        <%=f.label :url %>
+        <%=f.text_field :url, placeholder:"link to project or github repo"%>
+    </div>
+    <div class="form-group">
+        <%=f.label :status %>
+        <%=f.text_field :status, placeholder:"project status"%>
+    </div>
+    
+        <%=f.label :description %>
+        <%=f.text_area :description, placeholder: "a little about your project", class:"form-control"%>
+    <br>
+    <div class="form-group">
+        <%=f.hidden_field :member_id, value: @member.id%>
+        <%=f.submit "Submit", class: "btn btn-green"%>
+    </div>
+    
 <%end%>

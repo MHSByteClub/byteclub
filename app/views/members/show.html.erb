@@ -1,27 +1,32 @@
-    <div>
-        
-    </div>
+    
     <div id='controls'>
         <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="member-image">
+                            <%=image_tag 'pacman.png'%>
+                            <h4><%=@member.username%></h4>
+                            <p><%=@member.name%>, <%=@member.role%></p>
+                        </div>
+                    </div>
+                    <div class='col-8'>
+                        <h5>About Me</h5>
+                        <p><%=@member.bio%></p>
+                    </div><!-- column-->
+                </div><!--row-->
+                
             
-                <div class="member-image">
-                    <%=image_tag 'pacman.png'%>
-                </div>
-                <div>
-                    <h3><%=@member.username%></h3>
-                    <small><%=@member.role%></small>
-                    <small><%=@member.level%></small>
-                </div>
             
             
-            
-            
-            <a href="<%=edit_member_path(@member)%>" class="btn btn-warning">Update Info</a>
+            <%if @member.id==session[:member_id]%>
+                <%=link_to "Update Info", edit_member_path(@member), class: "btn btn-warning"%>
+                <%=link_to "New Project", new_member_project_path(@member), class: "btn btn-green"%>
+            <%end%>
         
         </div>
         <div class='container'>
             <h3>My Projects</h3>
-            <%=render "partials/projects_list"%>
+            <%=render "partials/projects_cards"%>
         </div>
         
     </div>

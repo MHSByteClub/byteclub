@@ -1,0 +1,19 @@
+
+
+<div class="card-columns">
+    <% @projects.each do |p|%>
+        <div class="card">
+            <div class="card-body">
+                <h5 class='card-title'><%=p.name%></h5>
+                <p class="card-text"><%=p.description%></p>
+                <small class="text-muted"><%=p.updated_at.strftime("Updated %m/%d/%y")%></small>
+            </div>
+            <div class="card-footer text-right">
+                <% if@member.id==session[:member_id]%>
+                    <%=link_to "Edit", edit_member_project_path(@member,p), class: "btn btn-sm btn-warning" %>
+                <%end%>
+                <%=link_to "View", p.url, class: "btn btn-sm btn-green"%>
+            </div>
+        </div>
+    <%end%>
+</div>
