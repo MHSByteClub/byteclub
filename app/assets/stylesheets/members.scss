@@ -12,3 +12,20 @@ footer{
         color:white;
     }
 }
+
+
+/* CARD COLUMNS STYLING*/
+
+.card-columns{
+    @include media-breakpoint-only(sm){
+        column-count: 2;
+    }
+    
+    @include media-breakpoint-only(md){
+        column-count: 3;
+    }
+    
+    @include media-breakpoint-only(lg){
+        column-count: 4;
+    }
+}

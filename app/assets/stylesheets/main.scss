@@ -17,6 +17,7 @@
 body{
     background-color:var(--bc-grey);
     color: white;
+    padding-bottom: 66px;
 }
 
 .container {
@@ -45,6 +46,8 @@ a:hover{
     color:var(--bc-yellow);
     text-decoration:none;
 }
+
+
 
 
 //////////////////////Navbar
@@ -130,6 +133,9 @@ input:focus {
 
 .btn-teal{
     background-color: var(--bc-teal);
+    a{
+        color:white;
+    }
 }
 
 
@@ -137,8 +143,9 @@ input:focus {
 footer {
     background-color: var(--bc-teal);
     position: relative;
-    bottom:0;
-    width:100%;
+    bottom: 0;
+    width: 100%;
+    max-height: 60px;
 }
 
 .member-image img{
