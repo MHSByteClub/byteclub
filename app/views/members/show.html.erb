@@ -18,7 +18,7 @@
             
             
             
-            <%if @member.id==session[:member_id]%>
+            <%if @member.id==@me.id%>
                 <%=link_to "Update Info", edit_member_path(@member), class: "btn btn-yellow"%>
                 <%=link_to "New Project", new_member_project_path(@member), class: "btn btn-green"%>
             <%end%>

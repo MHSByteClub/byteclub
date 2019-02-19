@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     
    def current_member
        return unless session[:member_id]
-       @member ||= Member.find(session[:member_id])
+       @me ||= Member.find(session[:member_id])
    end
    
    def logged_in?
@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
          redirect_to root_path
       end
    end
+   
+   
    
        
 end

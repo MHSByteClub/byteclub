@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+    before_action :current_member
     
     def new
         @member=Member.new
@@ -28,6 +29,10 @@ class MembersController < ApplicationController
         @member=Member.find(params[:id].to_i)
         @member.update(member_params)
         redirect_to member_path(@member)
+    end
+    
+    def learn
+        @member=current_member
     end
     
     
