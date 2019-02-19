@@ -12,7 +12,7 @@
                 <% if@member.id==session[:member_id]%>
                     <%=link_to "Edit", edit_member_project_path(@member,p), class: "btn btn-sm btn-yellow" %>
                 <%end%>
-                <%=link_to "View", p.url, class: "btn btn-sm btn-green"%>
+                <%=link_to "View", p.url, class: "btn btn-sm btn-teal"%>
             </div>
         </div>
     <%end%>

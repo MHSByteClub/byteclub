@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get "/dashboard" => "admin#home"
     post "/login" => "sessions#create"
     get "/logout" => "sessions#destroy"
+    get "/learn" => "members#learn"
     
     get "auth/:provider/callback", to: "sessions#create"
     get "auth/failure", to: redirect("/")

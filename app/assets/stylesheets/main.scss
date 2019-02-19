@@ -129,13 +129,16 @@ input:focus {
 .btn-yellow{
     background-color: var(--bc-yellow);
     color: var(--bc-black);
+    
 }
 
 .btn-teal{
     background-color: var(--bc-teal);
-    a{
-        color:white;
-    }
+    
+}
+
+a.btn-teal{
+    color: white;
 }
 
 
