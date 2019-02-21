@@ -8,6 +8,6 @@ class Announcement < ApplicationRecord
     #CLASS METHODS
     def self.recent_announcements
         today=Date.today
-        self.where("post_date > #{today}").order("post_date DESC").limit(3)
+        self.active.order("post_date DESC").limit(3)
     end
 end
