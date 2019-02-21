@@ -1,5 +1,3 @@
-
-
 <div class="card-columns">
     <% @projects.each do |p|%>
         <div class="card">
@@ -9,8 +7,10 @@
                 <small class="text-muted"><%=p.updated_at.strftime("Updated %m/%d/%y")%></small>
             </div>
             <div class="card-footer text-right">
-                <% if@member.id==@me.id%>
-                    <%=link_to "Edit", edit_member_project_path(@member,p), class: "btn btn-sm btn-yellow" %>
+                <% if !@me.nil? %>
+                    <% if@member.id==@me.id%>
+                        <%=link_to "Edit", edit_member_project_path(@member,p), class: "btn btn-sm btn-yellow" %>
+                    <%end%>
                 <%end%>
                 <%=link_to "View", p.url, class: "btn btn-sm btn-teal"%>
             </div>

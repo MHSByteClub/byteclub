@@ -31,6 +31,10 @@ class MembersController < ApplicationController
         redirect_to member_path(@member)
     end
     
+    def index
+        @members=Member.all
+    end
+    
     def learn
         @member=current_member
     end

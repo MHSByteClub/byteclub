@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
    layout :get_layout
+   before_action :current_member
+   
    
    def get_layout
       if admin?
@@ -10,9 +12,6 @@ class ApplicationController < ActionController::Base
          "application"
       end
    end
-         
-            
-   
     
    def current_member
        return unless session[:member_id]
