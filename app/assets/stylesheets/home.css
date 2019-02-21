@@ -8,3 +8,38 @@
     height: 30px;
     margin-right: 10px;
 }
+
+#video-background{
+    width:100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index:-100;
+    overflow:hidden;
+}
+
+
+/*////////////////////////Jumbotron*/
+.jumbotron {
+    text-align: CENTER;
+    z-index:101;
+    position:relative;
+
+}
+
+.jumbotron h1{
+    font-family:'JK Abode';
+    font-size:5em;
+    color: var(--bc-teal);
+    margin-bottom:-10px;
+}
+
+.jumbo-overlay{
+    background-color: rgba(var(--bc-black), 0.6);
+    padding:20px;
+    border-radius: 25px;
+    z-index:50;
+    
+}
