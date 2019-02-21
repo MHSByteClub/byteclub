@@ -68,6 +68,17 @@ a:hover{
     color:var(--bc-yellow);
 }
 
+#memberDropdown{
+    color: var(--bc-yellow);
+}
+
+.dropdown-menu{
+    background-color: var(--bc-grey);
+    .dropdown-item:hover{
+        background-color: var(--bc-black);
+    }
+}
+
 
 
 ////////////////////////Jumbotron
@@ -100,6 +111,7 @@ input {
     color: white;
     padding:5px;
     border-radius:3px;
+    border-bottom: solid 2px var(--bc-grey);
     margin: 5px 5px;
 }
 
@@ -112,6 +124,8 @@ input:focus {
     font-family: "Raleway", sans-serif;
     margin:0px;
 }
+
+
 
 
 

@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag asset_path("favicon.ico")%>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -20,10 +22,22 @@
       
       <div class='collapse navbar-collapse' id="navbar-list">
         <ul class='navbar-nav mr-auto'>
-          <li class="nav-link"></li>
-          <li class="nav-link"><a href="#">Projects</a></li>
-          <li class="nav-link"><%=link_to "Learn", learn_path%><</li>
-          <li class="nav-link"><%=link_to "Logout", logout_path%></li>
+          
+          <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="memberDropdown" role="button" data-toggle="dropdown" >
+              <%=@me.username%>
+            </a>
+            <div class="dropdown-menu">
+              <%=link_to "Profile", member_path(@me), class: "dropdown-item"%>
+              <%=link_to "Edit Info", edit_member_path(@me), class: "dropdown-item"%>
+              <div class="dropdown-divider"></div>
+              <%=link_to "Logout", logout_path, class: "dropdown-item"%>
+
+            </div>
+          
+          
+          <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
+          <li class="nav-item"><%=link_to "Learn", learn_path, class: "nav-link"%></li>
         </ul>
       </div>  
         

@@ -5,9 +5,14 @@
             <h1>Byte Club</h1>
             <h5 id="tagline">Bring a helmet.</h5>
         </div>
+        <% if @me.nil? %>
             <div>
                 <a href="/auth/google_oauth2" class="btn btn-green">Sign In</a>
             </div>
+        <%else%>
+                <p>Hey <%="Hey #{@me.username}, welcome back to Byte Club!"%></p>
+                <%=link_to "Logout", logout_path, class: "btn btn-danger"%>
+        <%end%>
         
     </div>
     <div class="container">

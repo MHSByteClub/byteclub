@@ -11,7 +11,26 @@
   </head>
 
   <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="<%=root_path%>"><img src=<%=image_path "pacman"%>/>Byte Club</a>
+      
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class='collapse navbar-collapse' id="navbar-list">
+        <ul class='navbar-nav mr-auto'>
+          <li class="nav-link"><a href="#">About</a></li>
+          <li class="nav-link"><%=link_to "Members", members_path%></li>
+          <li class="nav-link"><a href="#">Projects</a></li>
+          <li class="nav-link"><%=link_to "Learn", learn_path%></li>
+          <li class="nav-link"><%=link_to "Login/Sign-up", "auth/google_oauth2", class: "btn btn-sm btn-primary" %></li>
+        </ul>
+      </div>  
+        
+        
+    </nav>
       <div>
         <%= yield %>
       </div>

@@ -3,3 +3,8 @@
     overflow-y:scroll;
     -webkit-overflow-scrolling: touch;
 }
+
+.navbar-brand img{
+    height: 30px;
+    margin-right: 10px;
+}

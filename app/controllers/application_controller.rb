@@ -1,4 +1,18 @@
 class ApplicationController < ActionController::Base
+   layout :get_layout
+   
+   def get_layout
+      if admin?
+         "admin"
+      elsif logged_in?
+         "members"
+      else
+         "application"
+      end
+   end
+         
+            
+   
     
    def current_member
        return unless session[:member_id]
