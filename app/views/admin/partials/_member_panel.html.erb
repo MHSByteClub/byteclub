@@ -2,7 +2,7 @@
     <div class="card-body">
         <h4 class="card-title">Club Members</h4>
         <div class="card-body">
-            <table class="table table-sm table-responsive-lg">
+            <table class="table table-responsive-lg">
                 <thead>
                     <th scope="col">Name</th>
                     <th scope="col">Year</th>
@@ -13,7 +13,7 @@
                 </thead>
                 <% @members.each do |m|%>
                 <tr>
-                    <td><%=m.username%></td>
+                    <td><%= link_to m.username, member_path(m)%></td>
                     <td><%=m.grad_year%></td>
                     <td><%=m.role%></td>
                     <td><%=m.status%></td>

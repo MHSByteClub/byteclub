@@ -40,6 +40,7 @@ class Meeting < ApplicationRecord
     def self.meetings_attendance
         self.past.map { |mtg| [mtg.date, mtg.members.count]}
     end
+    
         
     
 end

@@ -6,6 +6,7 @@ class AdminController < ApplicationController
         @members=Member.all
         @meeting=Meeting.new
         @member=Member.new
+        @active_meeting=Meeting.active_meetings.first
         @current=current_member
         render "admin/dashboard"
     end

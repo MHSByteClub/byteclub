@@ -1,22 +1,37 @@
 <body>
-    <div class="container">
+    <div class="container" id="dashboard-container">
         <h2>Admin Dashboard</h2>
-        <div class="row">
-            <div class="col-xl-6 admin_announcements index">
+        <!--Attempting tabs display -->
+        <ul class="nav nav-tabs" id="dashboard-tabs" role="tablist">
+            <li class="nav-item active">
+                <a class="nav-link active" id="current_meeting_tab" data-toggle="tab" href="#current_meeting" role="tab" aria-controls="current_meeting" aria-selected="true">Current Meeting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="meetings_tab" data-toggle="tab" href="#meetings" role="tab" aria-controls="meetings" aria-selected="false">Meetings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="members_tab" data-toggle="tab" href="#members" role="tab" aria-controls="members" aria-selected="false">Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="announcements_tab" data-toggle="tab" href="#announcements" role="tab" aria-controls="announcements" aria-selected="false">Announcements</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="dashboard-tab-content">
+            <div class="tab-pane fade show active" id="current_meeting">
+                <%=render "admin/partials/active_meeting_panel"%>
+            </div>
+            <div class="tab-pane fade" id="meetings">
+                <%=render "admin/partials/meetings_panel"%>
+            </div>
+            <div class="tab-pane fade" id="members">
+                <%=render "admin/partials/member_panel"%>
+            </div>
+            <div class="tab-pane fade show" id="announcements">
                 <%=render "admin/partials/announcements_panel"%>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-6 admin_members index">
-                <%=render "admin/partials/member_panel"%>
-            </div>
-            <div class="col-xl-6 admin_meetings index">
-                <%=render "admin/partials/meetings_panel"%>
-                
-            </div>
-
-            
-        </div>
+        
         
         
         

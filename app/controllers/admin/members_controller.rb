@@ -34,6 +34,11 @@ class Admin::MembersController < AdminController
         redirect_to member_path(@member)
     end
     
+    def destroy 
+        @member=Member.find(params[:id].to_i)
+        @member.destroy
+    end
+    
     
     private
     

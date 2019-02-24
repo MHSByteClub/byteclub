@@ -7,7 +7,7 @@
 //anonymous function called on document load
 $(function(){
     //Check if the admin_meetings div exists, we must be on the dashboard page
-    if($(".admin_meetings.index").length>0){
+    if($("#dashboard-tabs").length>0){
         //GET request to pull all meetings as json and build table 
         $.get(window.location.href.replace("/dashboard","/admin/meetings")).done(function(resp){
             let meetings=resp;

@@ -1,0 +1,34 @@
+<div class="card" id="members-panel">
+    <div class="card-body">
+        <h4 class="card-title">Active Meeting Details</h4>
+        <div class="card-body">
+            <% if @active_meeting.nil? %>
+                <p>No meetings are currently active</p>
+                <p>Use the meetings tab to activate a meeting.</p>
+            <%else%>
+                <h6>Members Present: <%=@active_meeting.members.count%></h6>
+                <h6>Meeting Start: <%=@active_meeting.start_time.strftime("%H:%M %p")%></h6>
+                <table class="table table-responsive">
+                    <thead>
+                        <th scope="col">Name</th>
+                        <th scope="col">Grad Year</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Status</th>
+                    </thead>
+                    <% @active_meeting.members.each do |m|%>
+                    <tr>
+                        <td><%=link_to m.username, member_path(m) %></td>
+                        <td><%=m.grad_year%></td>
+                        <td><%=m.role%></td>
+                        <td><%=m.status%></td>
+                    </tr>
+                    <%end%>
+                </table>
+
+            <%end%>
+            
+        </div>
+        
+    </div>
+    
+</div>
