@@ -9,24 +9,16 @@
     margin-right: 10px;
 }
 
-#video-background{
-    width:100%;
-    position:absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index:-100;
-    overflow:hidden;
-}
+
 
 
 /*////////////////////////Jumbotron*/
 .jumbotron {
+    position: relative;
+    overflow: hidden;
     text-align: CENTER;
-    z-index:101;
-    position:relative;
-
+    z-index:1;
+    background-color: var(--bc-black);
 }
 
 .jumbotron h1{
@@ -36,10 +28,4 @@
     margin-bottom:-10px;
 }
 
-.jumbo-overlay{
-    background-color: rgba(var(--bc-black), 0.6);
-    padding:20px;
-    border-radius: 25px;
-    z-index:50;
-    
-}
+
