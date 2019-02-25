@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         
         #if there is an active meeting, record that this person 'attended' by signing in while active
         if !@meeting.nil?
-            MemberMeeting.create(member_id: @member.id, meeting_id: @meeting.id)
+            MemberMeeting.find_or_create_by(member_id: @member.id, meeting_id: @meeting.id)
         end
         
         
