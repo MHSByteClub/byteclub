@@ -20,7 +20,10 @@
                     <td>2</td>
                     <td>
                         <a href="<%=edit_admin_member_path(m)%>" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="" class="btn btn-sm btn-danger">Delete</a>
+                        <%=form_tag admin_member_path(m) do%>
+                            <%=hidden_field_tag "_method", "DELETE"%>
+                            <%=submit_tag "Delete", class:"btn btn-sm btn-danger"%>
+                        <%end%>
                     </td>
                 </tr>
                 <%end%>

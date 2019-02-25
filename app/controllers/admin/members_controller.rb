@@ -37,6 +37,7 @@ class Admin::MembersController < AdminController
     def destroy 
         @member=Member.find(params[:id].to_i)
         @member.destroy
+        redirect_to dashboard_path
     end
     
     
