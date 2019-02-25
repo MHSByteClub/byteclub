@@ -17,13 +17,11 @@
                     <td><%=m.grad_year%></td>
                     <td><%=m.role%></td>
                     <td><%=m.status%></td>
-                    <td>2</td>
+                    <td><%=m.projects.count%></td>
                     <td>
-                        <a href="<%=edit_admin_member_path(m)%>" class="btn btn-sm btn-warning">Edit</a>
-                        <%=form_tag admin_member_path(m) do%>
-                            <%=hidden_field_tag "_method", "DELETE"%>
-                            <%=submit_tag "Delete", class:"btn btn-sm btn-danger"%>
-                        <%end%>
+                        <%= link_to "Edit", edit_admin_member_path(m)%> | 
+                        
+                        <%= link_to "Delete", admin_member_path(m), method: :delete, data: {confirm: "Y'all wanna delete #{m.username}? This caint be undone."}%>
                     </td>
                 </tr>
                 <%end%>
