@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="card-title">
-                    <h5 class='card-title inline'><%=link_to m.username, member_path(m) %></h5>
+                    <h5 class='card-title inline'><%=link_to m.username, member_path(m) %>, <%=m.role%></h5>
                     <small><a href="" data-target="#user-<%=m.id%>-bio" data-toggle="collapse" >bio</a></small>
 
                 </div>
