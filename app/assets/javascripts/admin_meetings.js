@@ -1,7 +1,7 @@
 
 function buildMeetingsTable(mtgs){
     //Get meeting list container and clear it out
-    let mtgsList=$("#meetings-list")[0];
+    const mtgsList=$("#meetings-list")[0];
     mtgsList.innerHTML="";
     
     //For each meeting in the list
