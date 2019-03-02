@@ -8,4 +8,5 @@ App.init = ->
     
 #Calls App.init when turbolinks load, which happens on document.load
 $(document).on "turbolinks:load", ->
-    App.init()
+    App.init();
+    buildDashboard();
