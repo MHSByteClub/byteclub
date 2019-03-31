@@ -118,7 +118,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Matt Farmer** - *Initial work* - [Farmer & Dell](https://matt-farmer.com)
+* **Matt Farmer** - *Initial work* - [Farmer & Dell](http://matt-farmer.com)
 
 
 ## License
