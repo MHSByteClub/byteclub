@@ -5,13 +5,52 @@
         
         <% if @me.nil? %>
             <div>
-                <a href="/auth/google_oauth2" class="btn btn-green">Sign In</a>
+                <a href="/auth/google_oauth2" class="btn btn-green">Sign In with Google</a>
+                <button class="btn btn-yellow" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+                <a href="/members/new" class="btn btn-teal">Sign Up</a>
+        </div>
+                
+                
+                
             </div>
         <%else%>
                 <p>Hey <%="Hey #{@me.username}, welcome back to Byte Club!"%></p>
                 <%=link_to "Logout", logout_path, class: "btn btn-danger"%>
         <%end%>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sign-in-label">Sign in</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mr-auto ml-auto">
+                
+                    <%=form_tag("/login") do %>
+                        <div class='form-row'>
+                            <%=label_tag(:username, "Username:") %>
+                            <%=text_field_tag :username %>
+                        </div>
+                        <div class="form-row">
+                            <%=label_tag(:password, "Password:")%>
+                            <%=password_field_tag :password%>
+                        </div>
+                        
+                        <%=submit_tag("Log in", class: "btn-teal") %>
+                        <button class="btn btn-danger" class="close" data-dismiss="modal" aria-label="Close">
+                          Cancel
+                        </button>
+                    <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -56,4 +95,5 @@
             </div>
         </div>
     </div>
+    
 </body>

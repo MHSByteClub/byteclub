@@ -1,14 +1,30 @@
 class SessionsController < ApplicationController
     def create
+        # Creates a session when a user logs in, whether they do so with Google or not
         
-        #Only logging in with Google is allowed right now.
-        @member=Member.from_omniauth(request.env["omniauth.auth"])
-        #if @member && @member.authenticate(session_params[:password])
+        #If an omnauth.auth hash is available, they came from google, sign them in that way.
+        if request.env["omniauth.auth"]
+            
+            # Google oauth flow
+            puts "Google just vouched for you!"
+            @member=Member.from_omniauth(request.env["omniauth.auth"])
+            session[:member_id]=@member.id
+
+        else
+            
+            # local auth flow
+            @member=Member.find_by(username: session_params[:username])
+            if @member && @member.authenticate(session_params[:password])
+                session[:member_id]=@member.id
+            else
+                redirect_to root_path
+            end
+                
+            
+        end
         
-        #logging user in via session
-        session[:member_id]=@member.id
-        
-        #get active meeting
+        #RECORD THEIR ATTENDENCE IF A MEETING IS ACTIVE
+        #get active meeting, if there is one
         @meeting=Meeting.active_meetings.first
         
         #if there is an active meeting, record that this person 'attended' by signing in while active
