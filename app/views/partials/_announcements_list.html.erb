@@ -7,7 +7,7 @@
                     <h5 class="mb-1"><%=link_to a.title, announcement_path(a)%></h5>
                     <small><%=a.post_date%></small>
                 </div>
-                <p class="mb-1"><%=a.content%></p>
+                <p class="mb-1"><%= sanitize a.content%></p>
                 <small><%=a.member.username%> (<%=a.member.role%>)</small>
             </div>
         <%end%>
