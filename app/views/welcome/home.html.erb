@@ -17,7 +17,7 @@
             <div class="col-md-4">
                 <% if @next_meeting.nil? %>
                     <h5>No Upcoming Meetings</h5>
-                <% elsif @next_meeting.active%>
+                <% elsif @next_meeting.active?%>
                     <h5>Meeting Now!</h5>
                     <p>3:30 PM in C104</p>
                 <% else %>
@@ -53,6 +53,8 @@
             		<li>Get distracted by other computer-y stuff. <i>I'm looking at you Pokemon crowd.</i></li>
             	</ul>
             	<img src="<%=asset_url('byteclubfull.jpg')%>" style="width:100%"/>
+            	
+            	
             </div>
         </div>
     </div>

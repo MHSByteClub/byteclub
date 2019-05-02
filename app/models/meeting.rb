@@ -1,6 +1,6 @@
 class Meeting < ApplicationRecord
 
-    scope :next_meeting, -> { where("date > ?", Date.today ).order("date asc").first }
+    scope :next_meeting, -> { where("date >= ?", Date.today ).order("date asc").first }
     scope :upcoming_meetings, -> {where("date >= ?", Date.today).order("date asc") }
     scope :past, -> { where("date < ?", Date.today) }
     scope :active_meetings, -> { where(active: true) }
@@ -11,6 +11,8 @@ class Meeting < ApplicationRecord
     def members_count
         self.members.count
     end
+    
+    
     
     def start
         puts "Starting meeting"
