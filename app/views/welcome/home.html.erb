@@ -1,7 +1,7 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <h1>Byte Club</h1>
-        <h5 id="tagline">Bring a helmet.</h5>
+        <h5 id="tagline"></h5>
         
         <% if @me.nil? %>
             <div>
@@ -58,4 +58,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function(){
+            getTagline();
+        })
+    </script>
 </body>

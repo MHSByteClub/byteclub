@@ -19,3 +19,4 @@
 //= require init
 //= require chartkick
 //= require admin_dashboard
+//= require taglines
